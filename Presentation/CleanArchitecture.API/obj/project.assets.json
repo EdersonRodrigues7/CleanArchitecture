@@ -33,6 +33,42 @@
             "related": ".pdb;.xml"
           }
         }
+      },
+      "CleanArchitecture.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CleanArchitecture.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CleanArchitecture.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchitecture.Application.dll": {}
+        }
+      },
+      "CleanArchitecture.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CleanArchitecture.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchitecture.Domain.dll": {}
+        }
+      },
+      "CleanArchitecture.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CleanArchitecture.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CleanArchitecture.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchitecture.Persistence.dll": {}
+        }
       }
     }
   },
@@ -67,39 +103,64 @@
         "microsoft.openapi.1.6.17.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
+    },
+    "CleanArchitecture.Application/1.0.0": {
+      "type": "project",
+      "path": "../../Core/CleanArchitecture.Application/CleanArchitecture.Application.csproj",
+      "msbuildProject": "../../Core/CleanArchitecture.Application/CleanArchitecture.Application.csproj"
+    },
+    "CleanArchitecture.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../Core/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj",
+      "msbuildProject": "../../Core/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj"
+    },
+    "CleanArchitecture.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/CleanArchitecture.Persistence/CleanArchitecture.Persistence.csproj",
+      "msbuildProject": "../../Infrastructure/CleanArchitecture.Persistence/CleanArchitecture.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "CleanArchitecture.Application >= 1.0.0",
+      "CleanArchitecture.Persistence >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.2"
     ]
   },
   "packageFolders": {
-    "/home/ederson/.nuget/packages/": {}
+    "C:\\Users\\eders\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ederson/study/CleanArchitecture/Presentation/CleanArchitecture.API/CleanArchitecture.API.csproj",
+      "projectUniqueName": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Presentation\\CleanArchitecture.API\\CleanArchitecture.API.csproj",
       "projectName": "CleanArchitecture.API",
-      "projectPath": "/home/ederson/study/CleanArchitecture/Presentation/CleanArchitecture.API/CleanArchitecture.API.csproj",
-      "packagesPath": "/home/ederson/.nuget/packages/",
-      "outputPath": "/home/ederson/study/CleanArchitecture/Presentation/CleanArchitecture.API/obj/",
+      "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Presentation\\CleanArchitecture.API\\CleanArchitecture.API.csproj",
+      "packagesPath": "C:\\Users\\eders\\.nuget\\packages\\",
+      "outputPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Presentation\\CleanArchitecture.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ederson/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\eders\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Application\\CleanArchitecture.Application.csproj": {
+              "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Application\\CleanArchitecture.Application.csproj"
+            },
+            "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Infrastructure\\CleanArchitecture.Persistence\\CleanArchitecture.Persistence.csproj": {
+              "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Infrastructure\\CleanArchitecture.Persistence\\CleanArchitecture.Persistence.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -110,7 +171,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -142,7 +203,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\eders\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,38 +1,62 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "CleanArchitecture.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CleanArchitecture.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CleanArchitecture.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CleanArchitecture.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CleanArchitecture.Domain/CleanArchitecture.Domain.csproj",
+      "msbuildProject": "../CleanArchitecture.Domain/CleanArchitecture.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "CleanArchitecture.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "/home/ederson/.nuget/packages/": {}
+    "C:\\Users\\eders\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Application/CleanArchitecture.Application.csproj",
+      "projectUniqueName": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Application\\CleanArchitecture.Application.csproj",
       "projectName": "CleanArchitecture.Application",
-      "projectPath": "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Application/CleanArchitecture.Application.csproj",
-      "packagesPath": "/home/ederson/.nuget/packages/",
-      "outputPath": "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Application/obj/",
+      "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Application\\CleanArchitecture.Application.csproj",
+      "packagesPath": "C:\\Users\\eders\\.nuget\\packages\\",
+      "outputPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ederson/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\eders\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj": {
+              "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -43,7 +67,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -66,7 +90,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\eders\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

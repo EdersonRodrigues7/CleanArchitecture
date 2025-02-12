@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JaLjqiOAQIo=",
+  "dgSpecHash": "G8N3p0ARwZM=",
   "success": true,
-  "projectFilePath": "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj",
+  "projectFilePath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

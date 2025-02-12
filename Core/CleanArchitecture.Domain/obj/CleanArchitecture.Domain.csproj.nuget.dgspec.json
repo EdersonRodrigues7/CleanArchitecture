@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj": {}
+    "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj": {}
   },
   "projects": {
-    "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj": {
+    "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj",
+        "projectUniqueName": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj",
         "projectName": "CleanArchitecture.Domain",
-        "projectPath": "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj",
-        "packagesPath": "/home/ederson/.nuget/packages/",
-        "outputPath": "/home/ederson/study/CleanArchitecture/Core/CleanArchitecture.Domain/obj/",
+        "projectPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\CleanArchitecture.Domain.csproj",
+        "packagesPath": "C:\\Users\\eders\\.nuget\\packages\\",
+        "outputPath": "\\\\wsl.localhost\\Ubuntu\\home\\ederson\\study\\CleanArchitecture\\Core\\CleanArchitecture.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/ederson/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\eders\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,7 +38,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\eders\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
