@@ -4,12 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F960C959-6E27-4EBD-B1CE-6398FD8E443C}"
+	ProjectSection(SolutionItems) = preProject
+		Core\.gitignore = Core\.gitignore
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Domain", "Core\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj", "{95A333D3-5D7B-496C-9009-ECADAA2712CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Application", "Core\CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{4E6D474D-6906-4118-8849-203CBBFCAA8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DABA5A52-A080-4305-BE5E-78F00BA097B9}"
+	ProjectSection(SolutionItems) = preProject
+		Core\.gitignore = Core\.gitignore
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Persistence", "Infrastructure\CleanArchitecture.Persistence\CleanArchitecture.Persistence.csproj", "{FDFBF168-B0D5-4FDF-AEA6-279E187A1FA8}"
 EndProject
