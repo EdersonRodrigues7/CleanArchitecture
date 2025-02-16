@@ -99,6 +99,22 @@ Nesta camada é onde as regras de negócio são combinadas para executar tarefas
 - Behaviors;
 - Especificações.
 
+#### Padrão CQRS
+
+#### Bibliotecas
+MediatR (mediator): 
+Usado no projeto para ajudar na aplicação do padrão CQRS. 
+Insere uma camada intermediária entre os componentes.
+
+
+#### Use Cases
+
+#### Services
+
+#### Behavior
+
+#### Exceptions
+
 ### Camada de apresentação
 Parte da camada mais externa que consiste na interface com o cliente/usuário.
 - Páginas Web;
