@@ -1,5 +1,6 @@
 ## Clean Architecture
 ### Objetivo do Repositório
+Apresentar os conceitos da arquitetura limpa com um modelo simples, apenas para consulta e estudos.
 
 ### Conceito básico de Clean Arch
 A Clean Architecture (Arquitetura Limpa) é um padrão de arquitetura de software que visa criar sistemas bem estruturados, altamente testáveis e de fácil manutenção, tendo o foco na separação de responsabilidades e na criação de camadas independentes.
@@ -13,7 +14,6 @@ A ideia principal é proteger o domínio/core da aplicação, encapsulando as re
 Como é possível observar, as dependências devem seguir o fluxo da camada mais externa para a mais interna.
 
 ### Estrutura e Dependências
-O objetivo da presente solução é apresentar os conceitos da arquitetura limpa com um template simples, apenas para consulta e estudos.
 Foram criados 5 projetos dentro da solução para separar as camadas e responsabilidades da aplicação:
 1. Core/Domain: Camada de domínio;
 2. Core/Application: Camada de casos de uso;
@@ -36,7 +36,7 @@ Nesta camada deve residir o core da aplicação:
 - Constantes.
 
 #### Entidades e Interfaces
-Geralmente as aplicações contém entidades de domínio rico, mas para fins de estudo as classes serão entidades anêmicas. O mais importante é entender a separação das camadas e suas respectivas responsabilidades.
+Geralmente, as aplicações contêm entidades de domínio rico, mas para fins de estudo as classes serão entidades anêmicas. O mais importante é entender a separação das camadas e suas respectivas responsabilidades.
 
 Neste projeto, foi criada uma classe abstrata "BaseEntity" para representar um padrão das entidades do domínio da aplicação, bem como uma classe "User" para extendê-la.
 
@@ -64,8 +64,24 @@ Quanto à persistência de dados, podemos ter:
 - Cache.
 
 #### Context e Repositories
-
+ 
 #### Repository Pattern + Unit of Work
+Neste projeto a camada de persistência utiliza o padrão de repositórios em conjunto com a estratégia do "unit of work", mas também seria possível adotar o padrão "active record". 
+
+Trata-se de uma escolha para separar melhor a responsabilidade de executar as consultas no banco de dados, além de permitir maior controle de queries complexas com o "unit of work":
+- O padrão repository serve para abstrair a camada de acesso a dados, ocultar a lógica na camada de aplicação;
+- O uso do unit of work serve para realizar as consultas dos repositórios como uma transação única, evitando atualizações parciais em queries mais complexas.
+
+Importante observar que o Entity Framework Core já possui um repositório embutido e uma unidade de trabalho através do "DbContext" e do "DbSet", mas a ideia é construir o projeto sem depender diretamente de um ORM específico. É possível, por exemplo, optar por utilizar o ADO ou o Dapper.
+
+Também vale lembrar que cada abordagem possui os seus prós e contras, portanto deve-se considerar os seguintes aspectos:
+- Complexidade do projeto;
+- Escalabilidade;
+- Testabilidade;
+- Padrões de equipe;
+- Complexidade de transações.
+
+#### Service Extension
 
 ### Camada Application (Use Cases)
 Nesta camada é onde as regras de negócio são combinadas para executar tarefas concretas, usando as entidades da camada de domínio.
