@@ -21,6 +21,11 @@ Foram criados 5 projetos dentro da solução para separar as camadas e responsab
 4. Presentation/API: Camada de exibição/contato externo da aplicação;
 5. Test/Tests: Projeto com os casos de teste para a aplicação.
 
+Seguindo a ideia da arquitetura limpa apresentada anteriormente, o domínio não possui dependência dos demais projetos. As demais dependências são:
+- Application -> domínio;
+- Persistence -> Application;
+- API -> Application + Persistence.
+
 ### Domínio
 Nesta camada deve residir o core da aplicação:
 - Entidades;
@@ -30,7 +35,35 @@ Nesta camada deve residir o core da aplicação:
 - Enums;
 - Constantes.
 
+#### Entidades e Interfaces
+Geralmente as aplicações contém entidades de domínio rico, mas para fins de estudo as classes serão entidades anêmicas. O mais importante é entender a separação das camadas e suas respectivas responsabilidades.
+
+Neste projeto, foi criada uma classe abstrata "BaseEntity" para representar um padrão das entidades do domínio da aplicação, bem como uma classe "User" para extendê-la.
+
+Seguindo a mesma linha de raciocínio, foram criadas interfaces para representar o básico da interação com repositórios. 
+
+A ideia é ter uma interface de repositório base com as operações CRUD e implementar essa interface nos repositórios específicos de cada entidade.
+
 ### Infra: Persistência de dados
+Parte da camada mais externa que contém a infraestrutura da aplicação, abarcando persistência de dados, observabilidade, mensageria, entre outros.
+- Autenticação e Identidade;
+- Armazenamento de arquivos e objetos;
+- Fila e Mensageria;
+- Serviços de notificação (email/sms, etc.);
+- Serviços de logging;
+- Serviços de pagamento;
+- Logins sociais;
+- Serviços externos em geral;
+
+Quanto à persistência de dados, podemos ter:
+- Data Context;
+- Repositórios;
+- Migrações;
+- Data Seeding;
+- Cache em memória;
+- Cache.
+
+#### Context e Repositories
 
 #### Repository Pattern + Unit of Work
 
@@ -45,10 +78,22 @@ Nesta camada é onde as regras de negócio são combinadas para executar tarefas
 - Exceções;
 - DTOs;
 - Modelos de Request e Response;
+- Mapeamento de DTOs;
 - Validadores;
 - Behaviors;
 - Especificações.
 
 ### Camada de apresentação
+Parte da camada mais externa que consiste na interface com o cliente/usuário.
+- Páginas Web;
+- Componentes Web;
+- APIs;
+- Controllers;
+- Views;
+- Filtros;
+- Atributos;
+- Views Models;
+- Estilização (Style Sheets);
+- Javascript.
 
 ### Testes
