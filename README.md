@@ -144,6 +144,7 @@ Exemplo: CreateUser
 - CreateUserHandler: Contém a lógica de execução para criar um usuário.
 
 #### Services
+Contém a classe Service Extension, a qual injeta as dependências do projeto.
 
 #### Behavior
 
