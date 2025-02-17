@@ -64,6 +64,9 @@ Quanto à persistência de dados, podemos ter:
 - Cache.
 
 #### Context e Repositories
+A classe AppDbContext cumpre a função de dar o contexto de banco de dados para o fluxo da aplicação, permitindo a interação por transactions antes de efetivar as mudanças.
+
+Os repositórios abrigam as operações de comunicação com o banco de dados. O repositório base contém tarefas comuns para diversos modelos da aplicação, enquanto o "UserRepository" implementa métodos específicos para a entidade usuário. 
  
 #### Repository Pattern + Unit of Work
 Neste projeto a camada de persistência utiliza o padrão de repositórios em conjunto com a estratégia do "unit of work", mas também seria possível adotar o padrão "active record". 
@@ -74,7 +77,7 @@ Trata-se de uma escolha para separar melhor a responsabilidade de executar as co
 
 Importante observar que o Entity Framework Core já possui um repositório embutido e uma unidade de trabalho através do "DbContext" e do "DbSet", mas a ideia é construir o projeto sem depender diretamente de um ORM específico. É possível, por exemplo, optar por utilizar o ADO ou o Dapper.
 
-Também vale lembrar que cada abordagem possui os seus prós e contras, portanto deve-se considerar os seguintes aspectos:
+Também vale lembrar que cada abordagem possui os seus prós e contras, portanto se deve considerar os seguintes aspectos:
 - Complexidade do projeto;
 - Escalabilidade;
 - Testabilidade;
@@ -82,6 +85,7 @@ Também vale lembrar que cada abordagem possui os seus prós e contras, portanto
 - Complexidade de transações.
 
 #### Service Extension
+Classe que serve para orquestrar a injeção de dependências do projeto, onde está a configuração de banco de dados e a ligação entre interfaces e classes que as implementam.
 
 ### Camada Application (Use Cases)
 Nesta camada é onde as regras de negócio são combinadas para executar tarefas concretas, usando as entidades da camada de domínio.
@@ -100,14 +104,44 @@ Nesta camada é onde as regras de negócio são combinadas para executar tarefas
 - Especificações.
 
 #### Padrão CQRS
+CQRS é um padrão de design que separa as operações de leitura e gravação de dados em modelos de dados separados. 
+
+A sigla CQRS significa Command Query Responsibility Segregation, ou seja, Separação de Responsabilidades em Consultas e Comandos.
+
+O CQRS pode ser usado para:
+- Evitar problemas de inconsistência e incompatibilidade de informações;
+- Melhorar o desempenho, a escalabilidade e a segurança de um aplicativo;
+- Minimizar a concorrência de bloqueios;
+- Separar as responsabilidades de leitura e escrita, resultando em modelos mais limpos e manuteníveis;
+- Permitir que apenas as entidades ou operações de domínio apropriadas tenham permissão para executar ações de gravação nos dados.
 
 #### Bibliotecas
-MediatR (mediator): 
-Usado no projeto para ajudar na aplicação do padrão CQRS. 
-Insere uma camada intermediária entre os componentes.
-
+Apesar do padrão CQRS poder ser aplicado sem o uso de bibliotecas, existem determinadas ferramentas que podem facilitar a aplicação desses princípios.
+- MediatR (mediator): Serve para aplicar o padrão "mediator", inserindo uma camada intermediária entre os componentes e ajudando no aspecto de separação de responsabilidade entre comandos e queries;
+- AutoMapper: Auxilia no mapeamento entre entidades e DTOs;
+- FluentValidation: Simplifica a inserção de regras de validação nas requisições que entram na aplicação.
 
 #### Use Cases
+Para implementar os casos de uso da aplicação seguindo o CQRS, são utilizados "Commands", "Queries" e seus respectivos "Handlers".
+
+Os "Commands" e "Queries" funcionam basicamente como DTOs, abrigando os dados necessários para que a ação seja executada. Ambas as classes **não devem possuir lógica de negócios**, mas apenas transportar dados.
+
+Por outro lado, as classes "Handlers" têm a responsabilidade de receber os DTOs, validar os dados e executar as ações apropriadas no domínio.
+
+Lembrando:
+- Commands são solicitações para modificar o estado do sistema;
+- Queries são solicitações para consulta de dados do sistema.
+
+Nesta aplicação de exemplo, as interfaces "IRequest" e "IRequestHandler" do MediatR servem para facilitar a implementação dos "Commands", "Queries" e "Handlers":
+- IRequest: representa uma solicitação, serve como DTO;
+- IRequestHandler: define a assinatura do método "Handle" para processar a solicitação.
+
+Exemplo: CreateUser
+- CreateUserRequest: Representa o Command para a ação de criar um usuário;
+- CreateUserResponse: Trata-se do conjunto de dados de resposta ao criar um usuário;
+- CreateUserMapper: Realiza o mapeamento de dados entre objetos com estruturas diferentes (nesse caso, os DTOs e a entidade User);
+- CreateUserValidator: Define regras de validação para o Command CreateUserRequest;
+- CreateUserHandler: Contém a lógica de execução para criar um usuário.
 
 #### Services
 
