@@ -147,8 +147,12 @@ Exemplo: CreateUser
 Contém a classe Service Extension, a qual injeta as dependências do projeto.
 
 #### Behavior
+O Behavior é uma característica que permite adicionar lógica comum a todos ou a alguns handlers de requisições na implementação do CQRS.
+
+É algo útil para encapsular funcionalidades que devem ser executadas antes ou depois do processamento de uma requisição.
 
 #### Exceptions
+
 
 ### Camada de apresentação
 Parte da camada mais externa que consiste na interface com o cliente/usuário.
@@ -162,5 +166,10 @@ Parte da camada mais externa que consiste na interface com o cliente/usuário.
 - Views Models;
 - Estilização (Style Sheets);
 - Javascript.
+
+#### Swagger
+
+#### Controllers
+
 
 ### Testes
