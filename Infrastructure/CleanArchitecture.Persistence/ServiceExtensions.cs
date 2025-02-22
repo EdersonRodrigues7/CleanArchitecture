@@ -13,7 +13,11 @@ public static class ServiceExtensions
     {
         var connectionString = configuration.GetConnectionString("Sqlite");
 
-        services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(connectionString));
+        services.AddDbContext<AppDbContext>(
+            opt => opt.UseSqlite(
+                connectionString, 
+                b => b.MigrationsAssembly("CleanArchitecture.Persistence"))
+        );
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IUserRepository, UserRepository>();
     }
