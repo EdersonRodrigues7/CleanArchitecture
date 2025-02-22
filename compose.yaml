@@ -1,0 +1,16 @@
+﻿services:
+  cleanarchitecture.api:
+    image: cleanarchitecture.api
+    build:
+      context: .
+      dockerfile: Presentation/CleanArchitecture.API/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - sqlite-data:/app/Data:rw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+        
+volumes:
+  sqlite-data:
